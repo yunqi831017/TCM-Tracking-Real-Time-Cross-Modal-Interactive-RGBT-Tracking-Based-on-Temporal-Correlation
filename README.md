@@ -37,7 +37,7 @@ ${PROJECT_ROOT}
 Download [ImageNet or SOT](https://pan.baidu.com/s/1U42J6b3g1htma0OvmXRQCw?pwd=at5b) pretrained weights and put them under `$PROJECT_ROOT$/pretrained_models`.
 
 ```
-python tracking/train.py --script tcm_track --config vitb_256_tcm_32x4_4e4_lasher_15ep_in1k --save_dir ./output/vitb_256_tbsi_32x4_4e4_lasher_15ep_in1k --mode multiple --nproc_per_node 4
+python tracking/train.py --script tcm_track --config vitb_256_tcm_32x4_4e4_lasher_15ep_in1k --save_dir ./output/vitb_256_tcm_32x4_4e4_lasher_15ep_in1k --mode multiple --nproc_per_node 4
 ```
 
 Replace `--config` with the desired model config under `experiments/tbsi_track`.
@@ -48,7 +48,7 @@ Put the checkpoint into `$PROJECT_ROOT$/output/config_name/...` or modify the ch
 ```
 python tracking/test.py tcm_track vitb_256_tcm_32x4_4e4_lasher_15ep_in1k --dataset_name lasher_test --threads 6 --num_gpus 1
 
-python tracking/analysis_results.py --tracker_name tbsi_track --tracker_param vitb_256_tcm_32x4_4e4_lasher_15ep_in1k --dataset_name lasher_test
+python tracking/analysis_results.py --tracker_name tcm_track --tracker_param vitb_256_tcm_32x4_4e4_lasher_15ep_in1k --dataset_name lasher_test
 ```
 
 
